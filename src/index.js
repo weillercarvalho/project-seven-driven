@@ -1,9 +1,14 @@
 import ReactDOM from 'react-dom'
 
 function App() {  
-    <Top />;
-    <Main />;
-    <Footer />;
+
+    return (
+      <div>
+        <Top />;
+        <Main />;
+        <Footer />;
+      </div>
+    )
 }
 
 
