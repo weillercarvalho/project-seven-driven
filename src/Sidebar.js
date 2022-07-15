@@ -4,8 +4,8 @@ function SidebarBreak(props) {
       <div class="usuario">
         <img src={props.src} />
         <div class="texto">
-          <div class="nome">{props.nome}</div>
-          <div class="razao">{props.razao}</div>
+          <div class="nome">{props.name}</div>
+          <div class="razao">{props.purpose}</div>
         </div>
       </div>
 
@@ -14,33 +14,40 @@ function SidebarBreak(props) {
   )
 }
 
+function Sugestions(props) {
+  return (
+    <div class="usuario">
+      <img src="assets/img/catanacomics.svg" />
+      <div class="texto">
+        <strong>{props.strong}</strong>
+        {props.text}
+      </div>
+    </div>
+  )
+}
+
 function Sidebar() {
+  const sugestiontop = [
+    {strong: "catanacomics", text:"Catana"},
+  ];
+  const sugestionbottom = [
+    {src:"assets/img/bad.vibes.memes.svg", name:"bad.vibes.memes", purpose:"Segue você"},
+    {src:"assets/img/chibirdart.svg", name:"chibirdart", purpose:"Segue você"},
+    {src:"assets/img/razoesparaacreditar.svg", name:"razoesparaacreditar", purpose:"Novo no Instagram"},
+    {src:"assets/img/adorable_animals.svg", name:"adorable_animals", purpose:"Segue você"},
+    {src:"assets/img/smallcutecats.svg", name:"smallcutecats", purpose:"Segue você"},
+  ];
+
     return (
       <div class="sidebar">
-        <div class="usuario">
-          <img src="assets/img/catanacomics.svg" />
-          <div class="texto">
-            <strong>catanacomics</strong>
-            Catana
-          </div>
-        </div>
+        {sugestiontop.map((index) => <Sugestions strong={index.strong} texto={index.text}/>)}
 
         <div class="sugestoes">
           <div class="titulo">
             Sugestões para você
             <div>Ver tudo</div>
           </div>
-
-          <SidebarBreak src="assets/img/bad.vibes.memes.svg" nome="bad.vibes.memes" razao="Segue você"/>
-
-          <SidebarBreak src="assets/img/chibirdart.svg" nome="chibirdart" razao="Segue você"/>
-
-          <SidebarBreak src="assets/img/razoesparaacreditar.svg" nome="razoesparaacreditar" razao="Novo no Instagram"/>
-
-          <SidebarBreak src="assets/img/adorable_animals.svg" nome="adorable_animals" razao="Segue você"/>
-
-          <SidebarBreak src="assets/img/smallcutecats.svg" nome="smallcutecats" razao="Segue você"/>
-
+            {sugestionbottom.map((index) => <SidebarBreak src={index.src} name={index.name} purpose={index.purpose}/>)}
         </div>
 
         <div class="links">

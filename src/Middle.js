@@ -1,15 +1,3 @@
-function StoryBreak(props) {
-  return (
-    <div class="story">
-      <div class="imagem">
-        <img src={props.src} />
-      </div>
-      <div class="usuario">
-        {props.usuario}
-      </div>
-    </div>
-  )
-}
 
 function PostBreak(props) {
   return (
@@ -51,37 +39,52 @@ function PostBreak(props) {
   )
 }
 
+function StoryBreak(props) {
+  return (
+    <div class="story">
+      <div class="imagem">
+        <img src={props.src} />
+      </div>
+      <div class="usuario">
+        {props.usuario}
+      </div>
+    </div>
+  )
+}
+
 
 function Middle() {
-    return (
-        <div class="esquerda">
-            <div class="stories">
-              <StoryBreak src="assets/img/9gag.svg" usuario="9gag"/>
+  const story = [ 
+    {src: "assets/img/9gag.svg", usuario: "9gag"},             
+    {src: "assets/img/meowed.svg", usuario: "meowed"},
+    {src: "assets/img/barked.svg", usuario: "barked"},
+    {src: "assets/img/nathanwpylestrangeplanet.svg", usuario: "nathanwpylestrangeplanet"},
+    {src: "assets/img/wawawicomics.svg", usuario: "wawawicomics"},
+    {src: "assets/img/respondeai.svg", usuario: "respondeai"},
+    {src: "assets/img/filomoderna.svg", usuario: "filomoderna"},
+    {src: "assets/img/memeriagourmet.svg", usuario: "memeriagourmet"},
+  ];
 
-              <StoryBreak src="assets/img/meowed.svg" usuario="meowed"/>
+  const post = [
+    {src: "assets/img/meowed.svg", usuario: "meowed", src2:"assets/img/gato-telefone.svg",
+     src3:"assets/img/respondeai.svg", texto1:"respondeai", texto2:"outras 101.523 pessoas"},
+    {src: "assets/img/barked.svg", usuario: "barked", src2:"assets/img/dog.svg",
+     src3:"assets/img/adorable_animals.svg", texto1:"adorable_animals", texto2:"outras 99.159 pessoas"},
+  ];
 
-              <StoryBreak src="assets/img/barked.svg" usuario="barked"/>
-
-              <StoryBreak src="assets/img/nathanwpylestrangeplanet.svg" usuario="nathanwpylestrangeplanet"/>
-
-              <StoryBreak src="assets/img/wawawicomics.svg" usuario="wawawicomics"/>
-
-              <StoryBreak src="assets/img/respondeai.svg" usuario="respondeai"/>
-
-              <StoryBreak src="assets/img/filomoderna.svg" usuario="filomoderna"/>
-
-              <StoryBreak src="assets/img/memeriagourmet.svg" usuario="memeriagourmet"/>
-
-              <div class="setinha">
-                <ion-icon name="chevron-forward-circle"></ion-icon>
-              </div>
+  return (
+      <div class="esquerda">
+          <div class="stories">
+            {story.map((index) => <StoryBreak src={index.src} usuario={index.usuario}/>)}
+            <div class="setinha">
+              <ion-icon name="chevron-forward-circle"></ion-icon>
             </div>
-            <div class="posts">
-              <PostBreak src="assets/img/meowed.svg" usuario="meowed" src2="assets/img/gato-telefone.svg" src3="assets/img/respondeai.svg" texto1="respondeai" texto2="outras 101.523 pessoas"/>
-              
-              <PostBreak src="assets/img/barked.svg" usuario="barked" src2="assets/img/dog.svg" src3="assets/img/adorable_animals.svg" texto1="adorable_animals" texto2="outras 99.159 pessoas"/>
-            </div>
-        </div>
+          </div>
+          <div class="posts">
+            {post.map((index) => <PostBreak src={index.src} usuario={index.usuario} src2={index.src2} 
+            src3={index.src3} texto1={index.texto1} texto2={index.texto2}/>)}
+          </div>
+      </div>
         
     )
 }
