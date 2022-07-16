@@ -1,5 +1,16 @@
+import React from 'react';
 
 function PostBreak(props) {
+  const [count, setCount] = React.useState("");
+  function color() {
+    if (count === "") {
+      setCount("heart")
+    } else {
+      setCount("")
+    }
+  }
+
+
   return (
     <div class="post">
       <div class="topo">
@@ -19,7 +30,7 @@ function PostBreak(props) {
       <div class="fundo">
         <div class="acoes">
           <div>
-            <ion-icon name="heart-outline"></ion-icon>
+            <ion-icon class={count} onClick={() => color()} name="heart-outline"></ion-icon>
             <ion-icon name="chatbubble-outline"></ion-icon>
             <ion-icon name="paper-plane-outline"></ion-icon>
           </div>

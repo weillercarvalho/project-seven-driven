@@ -312,6 +312,28 @@ body {
   display: none !important;
 }
 
+.conteudo {
+  position: relative;
+}
+
+.heart {
+  color: crimson;
+}
+
+.heart:active{
+  transform: scale(0.9);
+}
+
+.react {
+  font-size: 100px;
+  position: absolute;
+  color: white;
+  left: 40%;
+  top: 40%;
+  opacity: 0.7;
+}
+
+
 @media (max-width: 935px) {
   .sidebar {
     display: none;
