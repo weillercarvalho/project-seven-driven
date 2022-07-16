@@ -316,11 +316,11 @@ body {
   position: relative;
 }
 
-.heart {
+#heart {
   color: crimson;
 }
 
-.heart:active{
+#heart:active{
   transform: scale(0.9);
 }
 
