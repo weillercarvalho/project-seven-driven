@@ -324,15 +324,38 @@ body {
   transform: scale(0.9);
 }
 
-.react {
-  font-size: 100px;
+#react {
+  font-size: 700%;
   position: absolute;
   color: white;
   left: 40%;
   top: 40%;
-  opacity: 0.7;
+  opacity: 0;
+  animation: react 1.0s linear;
 }
 
+@keyframes react {
+  0% {
+    transform: scale(1.0);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  90% {
+    transform: scale(1.0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+#hidden {
+  display: none;
+}
 
 @media (max-width: 935px) {
   .sidebar {

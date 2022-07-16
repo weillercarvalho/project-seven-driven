@@ -2,14 +2,17 @@ import React from 'react';
 
 function PostBreak(props) {
   const [count, setCount] = React.useState("");
-  const [counts, setCounts] = React.useState("heart-outline")
+  const [counts, setCounts] = React.useState("heart-outline");
+  const [icons, setIcons] = React.useState("hidden");
   function color() {
     if (counts === "heart-outline") {
-      setCount("heart")
-      setCounts("heart")
+      setCount("heart");
+      setCounts("heart");
+      setIcons("react")
     } else {
-      setCount("")
-      setCounts("heart-outline")
+      setCount("");
+      setCounts("heart-outline");
+      setIcons("hidden")
     }
   }
 
@@ -28,6 +31,7 @@ function PostBreak(props) {
 
       <div class="conteudo">
         <img onClick={() => color()} src={props.src2} />
+        <ion-icon id={icons} name="heart"></ion-icon>
       </div>
 
       <div class="fundo">
