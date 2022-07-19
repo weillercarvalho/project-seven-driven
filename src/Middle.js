@@ -1,6 +1,6 @@
 import React from 'react';
 
-function PostBreak(props) {
+function PostBreak({src,usuario,src2,src3,texto1,texto2}) {
   const [count, setCount] = React.useState("");
   const [counts, setCounts] = React.useState("heart-outline");
   const [icons, setIcons] = React.useState("hidden");
@@ -21,8 +21,8 @@ function PostBreak(props) {
     <div class="post">
       <div class="topo">
         <div class="usuario">
-          <img src={props.src} />
-          {props.usuario}
+          <img src={src} />
+          {usuario}
         </div>
         <div class="acoes">
           <ion-icon name="ellipsis-horizontal"></ion-icon>
@@ -30,7 +30,7 @@ function PostBreak(props) {
       </div>
 
       <div class="conteudo">
-        <img onClick={() => color()} src={props.src2} />
+        <img onClick={() => color()} src={src2} />
         <ion-icon id={icons} name="heart"></ion-icon>
       </div>
 
@@ -47,9 +47,9 @@ function PostBreak(props) {
         </div>
 
         <div class="curtidas">
-          <img src={props.src3} />
+          <img src={src3} />
           <div class="texto">
-            Curtido por <strong>{props.texto1}</strong> e <strong>{props.texto2}</strong>
+            Curtido por <strong>{texto1}</strong> e <strong>{texto2}</strong>
           </div>
         </div>
       </div>
@@ -57,14 +57,14 @@ function PostBreak(props) {
   )
 }
 
-function StoryBreak(props) {
+function StoryBreak({src,usuario}) {
   return (
     <div class="story">
       <div class="imagem">
-        <img src={props.src} />
+        <img src={src} />
       </div>
       <div class="usuario">
-        {props.usuario}
+        {usuario}
       </div>
     </div>
   )
@@ -93,14 +93,14 @@ function Middle() {
   return (
       <div class="esquerda">
           <div class="stories">
-            {story.map((index) => <StoryBreak src={index.src} usuario={index.usuario}/>)}
+            {story.map((index) => (<StoryBreak src={index.src} usuario={index.usuario}/>))}
             <div class="setinha">
               <ion-icon name="chevron-forward-circle"></ion-icon>
             </div>
           </div>
           <div class="posts">
-            {post.map((index) => <PostBreak src={index.src} usuario={index.usuario} src2={index.src2} 
-            src3={index.src3} texto1={index.texto1} texto2={index.texto2}/>)}
+            {post.map((index) => (<PostBreak src={index.src} usuario={index.usuario} src2={index.src2} 
+            src3={index.src3} texto1={index.texto1} texto2={index.texto2}/>))}
           </div>
       </div>
         

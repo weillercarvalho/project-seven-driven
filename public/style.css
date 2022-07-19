@@ -7,7 +7,7 @@
 body {
   background-color: #FAFAFA;
   margin: 54px 0 0;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   color: #262626;
   font-weight: 400;
   font-size: 14px;
@@ -91,6 +91,9 @@ body {
 
 .sidebar {
   width: 293px;
+  padding-top: 24px;
+  position: sticky;
+  top: 88px;
 }
 
 .stories {
@@ -214,11 +217,6 @@ body {
   margin-bottom: 18px;
 }
 
-.sidebar {
-  padding-top: 24px;
-  position: sticky;
-  top: 88px;
-}
 
 .sidebar > .usuario {
   display: flex;

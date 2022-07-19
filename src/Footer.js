@@ -1,11 +1,11 @@
-function FooterBreak(props) {
+function FooterBreak({logo1,logo2,logo3,logo4,logo5}) {
   return (
     <>
-      <ion-icon name={props.logo1}></ion-icon>
-      <ion-icon name={props.logo2}></ion-icon>
-      <ion-icon name={props.logo3}></ion-icon>
-      <ion-icon name={props.logo4}></ion-icon>
-      <ion-icon name={props.logo5}></ion-icon>
+      <ion-icon name={logo1}></ion-icon>
+      <ion-icon name={logo2}></ion-icon>
+      <ion-icon name={logo3}></ion-icon>
+      <ion-icon name={logo4}></ion-icon>
+      <ion-icon name={logo5}></ion-icon>
     </>
   )
 }

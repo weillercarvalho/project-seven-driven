@@ -1,11 +1,11 @@
-function SidebarBreak(props) {
+function SidebarBreak({src,name,purpose}) {
   return (
     <div class="sugestao">
       <div class="usuario">
-        <img src={props.src} />
+        <img src={src} />
         <div class="texto">
-          <div class="nome">{props.name}</div>
-          <div class="razao">{props.purpose}</div>
+          <div class="nome">{name}</div>
+          <div class="razao">{purpose}</div>
         </div>
       </div>
 
@@ -14,13 +14,13 @@ function SidebarBreak(props) {
   )
 }
 
-function Sugestions(props) {
+function Sugestions({strong,text}) {
   return (
     <div class="usuario">
       <img src="assets/img/catanacomics.svg" />
       <div class="texto">
-        <strong>{props.strong}</strong>
-        {props.text}
+        <strong>{strong}</strong>
+        {text}
       </div>
     </div>
   )
